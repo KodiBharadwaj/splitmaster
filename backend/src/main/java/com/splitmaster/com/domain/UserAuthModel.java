@@ -10,12 +10,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "user_auth_table")
-public class UserAuthTable {
+public class UserAuthModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String username;
     private String password;
+    private int roleId;
     private boolean isBlocked;
     private boolean isDeleted;
 }

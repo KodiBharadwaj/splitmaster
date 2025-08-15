@@ -5,20 +5,22 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "user_group_table")
-public class UserGroup {
+@Table(name = "transaction_table")
+public class TransactionDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private Long createdBy;
-    private LocalDateTime createdDateTime;
-    private Long deactivatedBy;
-    private boolean isActive;
+    private Long userGroupId;
+    private Long userId;
+    private BigDecimal amount;
+    private Long paidBy;
+    private String description;
+    private LocalDateTime transactionDateTime;
 }
